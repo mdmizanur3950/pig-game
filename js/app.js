@@ -15,7 +15,10 @@ const boxOne = document.querySelector('.boxOne'),
       diceTwo = document.querySelector('#dice2'),
       main = document.querySelector('.main'),
       currentScoreBox = document.querySelectorAll('.currentScoreBox'),
+      inputs = document.querySelector('#inputs'),
       winningNumber = document.querySelector('.number'),
+      playerOneName = document.querySelector('#player1'),
+      playerTwoName = document.querySelector('#player2'),
       winImage = document.querySelector('.win-image');
 
 // Btns
@@ -32,8 +35,11 @@ let currentScore = 0,
 
 // Initialization
 loading.style.display = 'none';
-btnRoll.style.display = 'none';
-btnSave.style.display = 'none';
+// btnRoll.style.opacity = '0';
+// btnSave.style.opacity = '0';
+
+btnRoll.style.bottom = '0';
+btnSave.style.bottom = '0';
 
 playerOneScore.textContent = '0';
 playerTwoScore.textContent = '0';
@@ -71,17 +77,37 @@ main.addEventListener('mousedown', function (e) {
 // Game Initialization
 function startGame() {
 
+  inputs.style.display = 'none';
   btnNew.style.display = 'none';
   boxOne.style.opacity = '1';
   boxTwo.style.opacity = '1';
 
-  btnRoll.style.display = 'block';
-  btnSave.style.display = 'block';
+  btnRoll.style.opacity = '1';
+  btnSave.style.opacity = '1';
 
-  winningNumber.style.display = 'none';
+  btnRoll.style.bottom = '25%';
+  btnSave.style.bottom = '16%';
+
+  // winningNumber.style.display = 'none';
   boxOne.className += ' active';
   winValue = winningNumber.value;
 
+  if (playerOneName.value === "") {
+    playerOne.innerHTML = 'Player 1<span class="playing"><i class="fa fa-circle"></i></span>';
+  } else {
+     playerOne.innerHTML = `${playerOneName.value}<span class="playing"><i class="fa fa-circle"></i></span>`;
+  }
+
+  if (playerTwoName.value === "") {
+    playerTwo.innerHTML = 'Player 2<span class="playing"><i class="fa fa-circle"></i></span>';
+  } else {
+     playerTwo.innerHTML = `${playerTwoName.value}<span class="playing"><i class="fa fa-circle"></i></span>`;
+  }
+
+  btnSave.style.opacity = '0';
+  btnSave.style.bottom = '0';
+  btnRoll.style.bottom = '21%';
+  
   loading.style.marginBottom = '90px';
   diceImages.style.marginBottom = '90px';
 
@@ -93,6 +119,14 @@ function rollDice() {
 
   // hide the Loader
   loading.style.display = 'none';
+
+  // Show the save button
+  btnSave.style.display = 'block';
+
+  // Reposition the buttons
+  btnRoll.style.bottom = '25%';
+  btnSave.style.opacity = '1';
+  btnSave.style.bottom = '16%';
 
   // Random naumber
   let diceNumberOne = Math.floor(Math.random() * 6) + 1,
@@ -165,6 +199,9 @@ function changePlayer() {
   boxTwo.classList.toggle('active');
 
   diceImages.style.display = 'none';
+  btnSave.style.opacity = '0';
+  btnSave.style.bottom = '0';
+  btnRoll.style.bottom = '21%';
 }
 
 // Game Win function

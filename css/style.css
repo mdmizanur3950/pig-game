@@ -111,12 +111,21 @@ body {
     font-weight: 700;
 }
 
+#inputs {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+/* Player Name Input */
+.name {
+  margin-bottom: 20px;
+  text-align: center;
+  /* color: #f80759 !important; */
+}
+
 /* Winning Number Input  */
 .number {
   text-align: center;
-  color: #f80759;
-  font-weight: 700;
-  font-size: 18px;
 }
 
 /* Hide the spinning icon in the number input box */
@@ -141,6 +150,7 @@ input[type=number] {
     bottom: 25%;
     left: 50%;
     transform: translate(-50%);
+    transition: all 0.7s;
 }
 
 .btn-save {
@@ -148,6 +158,7 @@ input[type=number] {
     bottom: 16%;
     left: 50%;
     transform: translate(-50%);
+    transition: all 0.7s;
 } 
 
 .btn-play,
@@ -166,6 +177,11 @@ input[type=number] {
 
 .btn-play {
   animation: animation 2s linear infinite;
+}
+
+.btn-roll,
+.btn-save {
+  opacity: 0;
 }
 
 @keyframes animation

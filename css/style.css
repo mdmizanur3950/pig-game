@@ -1,0 +1,223 @@
+/* Global CSS */
+body {
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+}
+
+.btn {
+  border-radius: 20px;
+}
+
+.active {
+    background: rgba(32, 58, 67, 0.5);
+}
+
+.btn:focus,
+.number:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+
+/* Modal Button */
+.btn-success {
+  position: absolute;
+  bottom: 2.5%;
+  left: 2.5%;
+}
+
+/* Main Window */
+.main {
+  background: linear-gradient(rgba(15, 32, 39, 0.2),rgba(15, 32, 39, 0.5)), url(../images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  color: #e9ebee;
+}
+
+.main .row {
+  min-height: 650px;
+}
+
+/* Game Central Box */
+.gameBox {
+  background: #0F2027;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1140px;
+  border: 1px solid #f80759;
+  border-radius: 5px;
+}
+
+.win-image {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.55;
+  width: 30%;
+  display: none;
+}
+
+.box {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.boxOne,
+.boxTwo {
+  opacity: 0.25;
+  transition: all 0.5s;
+}
+
+.player {
+  font-size: 50px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.playing {
+  color: #f80759;
+  font-size: 18px;
+  margin-left: 15px;
+  position: absolute;
+  top: 18px;
+  right: 18%;
+  display: none;
+}
+
+/* Change the current player icon to active player */
+.active .playing {
+  display: block;
+}
+
+.score {
+    font-size: 100px;
+    margin: 85px 0;
+}
+
+.currentScoreBox {
+    background: #2C5364;
+    display: inline-block;
+    padding: 25px;
+    border-radius: 3px;
+}
+
+.currentScoreBox .currentScore {
+    font-size: 35px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* Winning Number Input  */
+.number {
+  text-align: center;
+  color: #f80759;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Hide the spinning icon in the number input box */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.boxButton {
+    position: relative;
+}
+
+.btn-roll {
+    position: fixed;
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.btn-save {
+    position: fixed;
+    bottom: 16%;
+    left: 50%;
+    transform: translate(-50%);
+} 
+
+.btn-play,
+.btn-roll,
+.btn-save {
+    background: #f80759;
+    color: #fff;
+}
+
+.btn-play:hover,
+.btn-roll:hover,
+.btn-save:hover {
+    background: #e62164;
+    color: #fff;
+}
+
+.btn-play {
+  animation: animation 2s linear infinite;
+}
+
+@keyframes animation
+{
+     0% {
+          box-shadow: 0 0 0 0px rgba(248, 7, 89, 0.75);
+     }
+
+     50% {
+          box-shadow: 0 0 0 25px rgba(248, 7, 89, 0.15);
+     }
+
+     100% {
+          box-shadow: 0 0 0 50px rgba(248, 7, 89, 0);
+     }
+}
+
+/* Dice and Loding Gif */
+.loading,
+.dice {
+  mix-blend-mode: difference;
+}
+
+.dice {
+  width: 52%;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.85;
+}
+
+#dice1 {
+  margin-bottom: 60px;
+}
+
+
+/* Game Information Modal */
+.modal-content {
+  border: 1px solid #f80759;
+  background: rgba(248, 7, 89, 0.95);
+  color: #e9ebee;
+  box-shadow: 0 0 45px 25px rgba(248, 7, 89, 0.25);
+}
+
+.modal h5,
+.modal h6 {
+  font-weight: 700;
+}
+
+.close {
+  opacity: 0.8;
+}
+
+.close span {
+  color: #fff;
+}
